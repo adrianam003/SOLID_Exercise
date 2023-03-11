@@ -18,13 +18,13 @@ public class Main {
             Connection connection = DriverManager.getConnection("jdbc:sqlite:database.db");
             connection.setAutoCommit(false);
 
-            CreateInterface createInterface=new CreateTable();
+            CreateInterface createInterface = new CreateTable();
             createInterface.createTable(connection);
 
-            InsertInterface insertInterface=new InsertTable();
+            InsertInterface insertInterface = new InsertTable();
             insertInterface.insertData(connection);
 
-            SelectInterface selectInterface=new SelectTable();
+            SelectInterface selectInterface = new SelectTable();
             selectInterface.readData(connection);
 
             connection.close();
@@ -32,10 +32,4 @@ public class Main {
             e.printStackTrace();
         }
     }
-
-
-
-
-
-
 }
